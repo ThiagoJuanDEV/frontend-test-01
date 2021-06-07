@@ -31,7 +31,7 @@ function Chart({ data }) {
               src={TrashIcon}
               alt="edit-icon"
               onClick={() => {
-                deleteChart(data.id);
+                deleteChart(data[0].id);
               }}
             />
           </div>
