@@ -34,6 +34,7 @@ export const ButtonGradient = styled.button`
     #ff54d9 109.02%
   );
 
+  font-size: ${(props) => props.fontSize};
   font-weight: 600;
   cursor: pointer;
   color: #f4f4f4;
@@ -50,4 +51,5 @@ export const ButtonGradient = styled.button`
 ButtonGradient.defaultProps = {
   width: "8rem",
   height: "2.5rem",
+  fontSize: "1rem",
 };
