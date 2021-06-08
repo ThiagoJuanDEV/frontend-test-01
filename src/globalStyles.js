@@ -53,10 +53,11 @@ export const ButtonGradient = styled.button`
 
   background-size: 200%;
 
-  transition: background 0.25s ease-in;
+  transition: all 0.25s ease-in;
 
   :hover {
     background-position: right;
+    transform: scale(1.1);
   }
 `;
 
