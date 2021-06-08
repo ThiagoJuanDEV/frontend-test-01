@@ -4,6 +4,7 @@ import { Context } from "../../context/ChartContext";
 import { Container, HeaderGradient, CreateForm } from "../modalStyles";
 
 import { v4 as uuidv4 } from "uuid";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ColorSelecting from "../../components/Dashboard/ColorSelecting";
 import { ButtonGradient } from "../../globalStyles";
@@ -14,10 +15,21 @@ function EditModal() {
   const { chartActive, updateChartInfo } = useContext(Context);
 
   return (
-    <>
+    <AnimatePresence>
       {isEditModalOpen && (
-        <Container>
-          <div className="modalBox">
+        <Container
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="modalBox"
+            initial={{ y: "-100vh", x: "-50%" }}
+            animate={{ y: "-50%", x: "-50%" }}
+            transition={{ duration: 0.5 }}
+            exit={{ y: "-100vh" }}
+          >
             <HeaderGradient>
               <h4>CRIAR GRÁFICO</h4>
               <div onClick={closeEditModal}>
@@ -80,10 +92,10 @@ function EditModal() {
               </div>
               <ButtonGradient>EDITAR</ButtonGradient>
             </CreateForm>
-          </div>
+          </motion.div>
         </Container>
       )}
-    </>
+    </AnimatePresence>
   );
 }
 

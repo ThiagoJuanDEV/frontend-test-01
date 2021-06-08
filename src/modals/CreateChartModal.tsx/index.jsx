@@ -4,6 +4,7 @@ import { ModalContext } from "../../context/ModalContext";
 
 import { v4 as uuidv4 } from "uuid";
 import format from "date-fns/format";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Container, HeaderGradient, CreateForm } from "../modalStyles";
 import ColorSelecting from "../../components/Dashboard/ColorSelecting";
@@ -16,10 +17,21 @@ function CreateChartModal() {
   const { isCreateChartModalOpen, closeChartModal } = useContext(ModalContext);
 
   return (
-    <>
+    <AnimatePresence>
       {isCreateChartModalOpen && (
-        <Container>
-          <div className="modalBox">
+        <Container
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="modalBox"
+            initial={{ y: "-100vh", x: "-50%" }}
+            animate={{ y: "-50%", x: "-50%" }}
+            exit={{ y: "-100vh" }}
+            transition={{ duration: 0.5 }}
+          >
             <HeaderGradient>
               <h4>CRIAR GRÁFICO</h4>
               <div onClick={closeChartModal}>
@@ -65,10 +77,10 @@ function CreateChartModal() {
               </div>
               <ButtonGradient>CRIAR</ButtonGradient>
             </CreateForm>
-          </div>
+          </motion.div>
         </Container>
       )}
-    </>
+    </AnimatePresence>
   );
 }
 

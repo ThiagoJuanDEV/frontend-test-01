@@ -26,7 +26,7 @@ function Chart({ data }) {
           >
             <img src={EditIcon} alt="edit-icon" />
           </div>
-          <div className="chartButton" style={{ backgroundColor: "#FF3535" }}>
+          <div className="chartButton" style={{ backgroundColor: "#ff5555" }}>
             <img
               src={TrashIcon}
               alt="edit-icon"

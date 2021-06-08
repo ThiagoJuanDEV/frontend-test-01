@@ -2,9 +2,10 @@ import styled from "styled-components";
 import backgroundMessage from "../../../assets/backgroundMessage.png";
 
 export const Container = styled.div`
-  background: url(${backgroundMessage});
-  width: 100vw;
-  height: 87vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
   flex-direction: column;
