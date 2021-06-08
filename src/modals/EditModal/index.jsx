@@ -5,6 +5,7 @@ import { Container, HeaderGradient, CreateForm } from "../modalStyles";
 
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence, motion } from "framer-motion";
+import { opacityVariants, modalVariants } from "../../constants/variants";
 
 import ColorSelecting from "../../components/Dashboard/ColorSelecting";
 import { ButtonGradient } from "../../globalStyles";
@@ -18,17 +19,17 @@ function EditModal() {
     <AnimatePresence>
       {isEditModalOpen && (
         <Container
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          exit={{ opacity: 0 }}
+          variants={opacityVariants}
+          initial="start"
+          animate="do"
+          exit="end"
         >
           <motion.div
             className="modalBox"
-            initial={{ y: "-100vh", x: "-50%" }}
-            animate={{ y: "-50%", x: "-50%" }}
-            transition={{ duration: 0.5 }}
-            exit={{ y: "-100vh" }}
+            variants={modalVariants}
+            initial="start"
+            animate="do"
+            exit="end"
           >
             <HeaderGradient>
               <h4>CRIAR GRÁFICO</h4>

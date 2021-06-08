@@ -13,7 +13,7 @@ export const Container = styled.header`
 
   .searchBarContainer {
     background: rgba(111, 122, 132, 0.08);
-    border-radius: 50px;
+    border-radius: 3rem;
     width: 16rem;
     height: 2.5rem;
     padding: 0 1rem;
@@ -43,11 +43,11 @@ export const SearchBarContainer = styled.div`
   }
 
   .box {
-    width: 50px;
+    width: 3rem;
     height: 3rem;
     background: rgba(111, 122, 132, 0.08);
     transition: 0.5s;
-    border-radius: 50px;
+    border-radius: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,10 +55,11 @@ export const SearchBarContainer = styled.div`
   }
 
   .box > label {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     padding-right: 1.5rem;
     line-height: 60px;
+
     text-align: center;
     cursor: pointer;
     color: gray;
@@ -74,7 +75,6 @@ export const SearchBarContainer = styled.div`
     height: 100%;
     background-color: transparent;
     outline: none;
-    border-radius: 30px;
     font-size: 1rem;
     padding-left: 25px;
     color: gray;

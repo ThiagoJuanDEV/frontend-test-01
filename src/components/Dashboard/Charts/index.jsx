@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { Container } from "./styles";
 import Chart from "../Chart";
 
+import { v4 as uuidv4 } from "uuid";
+
 function Charts() {
   const { chartsArray, searchItem } = useContext(Context);
 
@@ -18,7 +20,7 @@ function Charts() {
 
   let renderCharts = arrayFilter.map((chart) => {
     const newData = [{ ...chart }];
-    return <Chart data={newData} key={chart.name} />;
+    return <Chart data={newData} key={uuidv4()} />;
   });
 
   return <Container>{renderCharts}</Container>;

@@ -9,6 +9,7 @@ import EditIcon from "../../../assets/EditIcon.svg";
 import TrashIcon from "../../../assets/TrashIcon.svg";
 
 import { AnimatePresence } from "framer-motion";
+import { opacityVariants } from "../../../constants/variants";
 
 function Chart({ data }) {
   const { openEditModal } = useContext(ModalContext);
@@ -17,10 +18,10 @@ function Chart({ data }) {
   return (
     <AnimatePresence>
       <Container
-        transition={{ duration: 0.5 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opactiy: 0 }}
+        variants={opacityVariants}
+        initial="start"
+        animate="do"
+        exit="end"
       >
         <header>
           <h3 style={{ color: data[0].color || "#FFCE54" }}>{data[0].name}</h3>
@@ -35,14 +36,14 @@ function Chart({ data }) {
             >
               <img src={EditIcon} alt="edit-icon" />
             </div>
-            <div className="chartButton" style={{ backgroundColor: "#ff5555" }}>
-              <img
-                src={TrashIcon}
-                alt="edit-icon"
-                onClick={() => {
-                  deleteChart(data[0].id);
-                }}
-              />
+            <div
+              className="chartButton"
+              style={{ backgroundColor: "#ff5555" }}
+              onClick={() => {
+                deleteChart(data[0].id);
+              }}
+            >
+              <img src={TrashIcon} alt="edit-icon" />
             </div>
           </div>
         </header>
