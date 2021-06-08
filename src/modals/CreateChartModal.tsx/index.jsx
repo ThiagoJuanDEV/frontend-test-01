@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Context } from "../../context/ChartContext";
 import { ModalContext } from "../../context/ModalContext";
 
-import * as yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 import format from "date-fns/format";
 import { AnimatePresence, motion } from "framer-motion";
@@ -73,7 +72,7 @@ function CreateChartModal() {
                   <input type="number" name="meta" />
                 </div>
                 <div>
-                  <label htmlFor="feitas">Questões feitas hoje</label>
+                  <label htmlFor="feitas">Feitas de hoje</label>
                   <input type="number" name="feitas" required />
                 </div>
               </div>

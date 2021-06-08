@@ -22,6 +22,34 @@ export const Container = styled(motion.div)`
 
     border-radius: 25px;
   }
+
+  @media (max-width: 580px) {
+    .modalBox {
+      width: 34rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modalBox {
+      width: 30rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .modalBox {
+      width: 24rem;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .modalBox {
+      width: 20rem;
+    }
+
+    .formBoxContainer {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const HeaderGradient = styled.header`
@@ -110,7 +138,7 @@ export const CreateForm = styled.form`
     }
 
     div:first-child {
-      margin-right: 2rem;
+      margin-right: 1.75rem;
     }
   }
 
@@ -127,13 +155,6 @@ export const CreateForm = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    > input {
-      width: 1.5rem;
-      height: 1.5rem;
-
-      background-color: green;
-    }
   }
 
   .questionsBox {
@@ -141,6 +162,58 @@ export const CreateForm = styled.form`
 
     input {
       width: 10rem;
+    }
+  }
+
+  @media (max-width: 580px) {
+    padding: 1.5rem 2rem;
+
+    .nameInput {
+      width: 17.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nameInput {
+      width: 13.2rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    padding: 1.5rem 1.5rem;
+
+    .nameInput {
+      width: 12.2rem;
+    }
+
+    .checkboxBg {
+      width: 8.5rem;
+    }
+
+    .formBoxContainer {
+      div:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 340px) {
+    .nameInput {
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+
+    > button {
+      margin-top: 1rem;
+    }
+
+    .questionsBox {
+      margin-top: 0.5rem;
+      flex-direction: row !important;
+
+      input {
+        width: 90%;
+      }
     }
   }
 `;

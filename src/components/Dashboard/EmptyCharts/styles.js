@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import backgroundMessage from "../../../assets/backgroundMessage.png";
 
 export const Container = styled.div`
   position: absolute;
@@ -20,5 +19,19 @@ export const Container = styled.div`
     line-height: 1.5;
     color: #888888;
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 680px) {
+    > h2 {
+      width: 28rem;
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    > h2 {
+      width: 20rem;
+      font-size: 1.75rem;
+    }
   }
 `;

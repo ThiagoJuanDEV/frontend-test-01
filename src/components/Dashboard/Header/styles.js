@@ -11,6 +11,22 @@ export const Container = styled.header`
     margin-right: 0.5rem;
   }
 
+  @media (max-width: 680px) {
+    .hexLogo {
+      width: 4rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .hexLogo {
+      width: 3.5rem;
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
   .searchBarContainer {
     background: rgba(111, 122, 132, 0.08);
     border-radius: 3rem;
@@ -93,5 +109,23 @@ export const SearchBarContainer = styled.div`
 
   #check:checked + .box > input {
     opacity: 1;
+  }
+
+  @media (max-width: 780px) {
+    #check:checked + .box {
+      width: 400px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    #check:checked + .box {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    #check:checked + .box {
+      width: 200px;
+    }
   }
 `;
