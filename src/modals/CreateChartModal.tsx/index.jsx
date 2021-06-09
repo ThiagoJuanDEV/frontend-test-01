@@ -53,6 +53,7 @@ function CreateChartModal() {
                 };
 
                 createChart(obj);
+                setColorActive("");
                 closeChartModal();
               }}
             >

@@ -15,4 +15,9 @@ export const Container = styled.div`
   justify-content: center;
 
   cursor: pointer;
+  transition: opacity 0.25s ease-in;
+
+  :hover {
+    opacity: 0.7;
+  }
 `;

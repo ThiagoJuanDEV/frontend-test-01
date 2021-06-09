@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const Context = createContext({});
 
@@ -7,8 +7,17 @@ export function ContextProvider({ children }) {
   const [chartActive, setChartActive] = useState([{}]);
   const [searchItem, setSearchItem] = useState("");
 
+  useEffect(() => {
+    let data = window.localStorage.getItem("charts");
+
+    if (data) {
+      setChartsArray(JSON.parse(data));
+    }
+  }, []);
+
   const createChart = (data) => {
     const newChartsArray = [...chartsArray, data];
+    window.localStorage.setItem("charts", JSON.stringify(newChartsArray));
     setChartsArray(newChartsArray);
   };
 
@@ -30,6 +39,7 @@ export function ContextProvider({ children }) {
     });
 
     setChartsArray(newChartsArray);
+    window.localStorage.setItem("charts", JSON.stringify(newChartsArray));
   };
 
   const deleteChart = (id) => {
@@ -38,6 +48,7 @@ export function ContextProvider({ children }) {
     );
 
     setChartsArray(newChartsArray);
+    window.localStorage.setItem("charts", JSON.stringify(newChartsArray));
   };
 
   return (

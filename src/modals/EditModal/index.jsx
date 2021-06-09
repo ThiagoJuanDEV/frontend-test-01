@@ -50,6 +50,7 @@ function EditModal() {
                 };
 
                 updateChartInfo(obj);
+                setColorActive("");
                 closeEditModal();
               }}
             >
